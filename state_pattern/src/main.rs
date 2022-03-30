@@ -1,4 +1,4 @@
-struct EngineOff {}
+struct EngineOff;
 
 impl EngineOff {
     fn engine_on(self) -> Idle {
@@ -6,7 +6,7 @@ impl EngineOff {
     }
 }
 
-struct Idle {}
+struct Idle;
 
 impl Idle {
     fn forward(self) -> Forward {
@@ -33,10 +33,10 @@ trait Drive {
     fn right(&self) {}
 }
 
-struct Forward {}
+struct Forward;
 impl Drive for Forward {}
 
-struct Backward {}
+struct Backward;
 impl Drive for Backward {}
 
 fn main() {
