@@ -1,4 +1,6 @@
-pub trait AddContent {
+use crate::design_pattern_example::DesignPatternExample;
+
+trait AddContent {
     fn add_content(&self) {
         let steps = ["Research", "Write", "Review", self.publish()];
 
@@ -10,26 +12,33 @@ pub trait AddContent {
 }
 
 struct WebBlog;
-struct Magazine;
-
 impl AddContent for WebBlog {
     fn publish(&self) -> &str {
         "Add new web page"
     }
 }
 
+struct Magazine;
 impl AddContent for Magazine {
     fn publish(&self) -> &str {
         "Print new edition"
     }
 }
 
-fn main() {
-    let web_blog = WebBlog {};
-    web_blog.add_content();
+pub struct TemplateMethodPatternExample;
 
-    println!();
+impl DesignPatternExample for TemplateMethodPatternExample {
+    fn name<'a>(&self) -> &'a str {
+        "Template Method Pattern"
+    }
 
-    let magazine = Magazine {};
-    magazine.add_content();
+    fn run(&self) {
+        let web_blog = WebBlog {};
+        web_blog.add_content();
+
+        println!();
+
+        let magazine = Magazine {};
+        magazine.add_content();
+    }
 }

@@ -1,3 +1,5 @@
+use crate::design_pattern_example::DesignPatternExample;
+
 struct EngineOff;
 
 impl EngineOff {
@@ -39,20 +41,28 @@ impl Drive for Forward {}
 struct Backward;
 impl Drive for Backward {}
 
-fn main() {
-    let car = EngineOff {};
-    let car = car.engine_on();
-    let car = car.forward();
+pub struct StatePatternExample;
 
-    car.left();
-    car.right();
+impl DesignPatternExample for StatePatternExample {
+    fn name<'a>(&self) -> &'a str {
+        "State Pattern"
+    }
 
-    let car = car.stop();
-    let car = car.backward();
+    fn run(&self) {
+        let car = EngineOff {};
+        let car = car.engine_on();
+        let car = car.forward();
 
-    car.left();
-    car.right();
+        car.left();
+        car.right();
 
-    let car = car.stop();
-    let _ = car.engine_off();
+        let car = car.stop();
+        let car = car.backward();
+
+        car.left();
+        car.right();
+
+        let car = car.stop();
+        let _ = car.engine_off();
+    }
 }
