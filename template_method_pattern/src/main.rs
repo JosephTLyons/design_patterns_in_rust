@@ -1,11 +1,6 @@
 pub trait AddContent {
     fn add_content(&self) {
-        let steps = [
-            "Research",
-            "Write",
-            "Review",
-            self.publish(),
-        ];
+        let steps = ["Research", "Write", "Review", self.publish()];
 
         for (i, step) in steps.iter().enumerate() {
             println!("{}) {}", i + 1, step);
