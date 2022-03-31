@@ -8,10 +8,12 @@ trait AddContent {
             println!("{}) {}", i + 1, step);
         }
     }
+
     fn publish(&self) -> &str;
 }
 
 struct WebBlog;
+
 impl AddContent for WebBlog {
     fn publish(&self) -> &str {
         "Add new web page"
@@ -19,6 +21,7 @@ impl AddContent for WebBlog {
 }
 
 struct Magazine;
+
 impl AddContent for Magazine {
     fn publish(&self) -> &str {
         "Print new edition"

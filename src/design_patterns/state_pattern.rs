@@ -7,6 +7,7 @@ impl EngineOff {
         println!("Turning Engine Off");
         EngineOff {}
     }
+
     fn engine_on(self) -> Idle {
         Idle::new()
     }
@@ -40,9 +41,11 @@ trait Drive {
     {
         Idle::new()
     }
+
     fn left(&self) {
         println!("Turning Left");
     }
+
     fn right(&self) {
         println!("Turning Right");
     }
