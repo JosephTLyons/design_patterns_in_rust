@@ -9,3 +9,5 @@ impl DesignPatternExample for BuilderPatternExample {
 
     fn run(&self) {}
 }
+
+// Consider two examples: one that consumes self and requires a final "build" method, and one that clones each time, returning a new instance, and doesn't consume self
