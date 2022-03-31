@@ -13,10 +13,14 @@ fn main() {
     ];
 
     for example in examples {
-        let example_name = example.name();
-        println!("{example_name}");
+        let header = format!(
+            "{} Pattern ({} Example)",
+            example.pattern_name(),
+            example.example_name()
+        );
+        println!("{header}");
 
-        let divider = "=".repeat(example_name.len());
+        let divider = "=".repeat(header.len());
         println!("{divider}");
 
         example.run();

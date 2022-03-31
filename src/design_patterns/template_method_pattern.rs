@@ -28,8 +28,12 @@ impl AddContent for Magazine {
 pub struct TemplateMethodPatternExample;
 
 impl DesignPatternExample for TemplateMethodPatternExample {
-    fn name<'a>(&self) -> &'a str {
-        "Template Method Pattern"
+    fn pattern_name<'a>(&self) -> &'a str {
+        "Template Method"
+    }
+
+    fn example_name<'a>(&self) -> &'a str {
+        "Article"
     }
 
     fn run(&self) {

@@ -72,8 +72,12 @@ impl Drive for Backward {}
 pub struct StatePatternExample;
 
 impl DesignPatternExample for StatePatternExample {
-    fn name<'a>(&self) -> &'a str {
-        "State Pattern"
+    fn pattern_name<'a>(&self) -> &'a str {
+        "State"
+    }
+
+    fn example_name<'a>(&self) -> &'a str {
+        "Car"
     }
 
     fn run(&self) {
