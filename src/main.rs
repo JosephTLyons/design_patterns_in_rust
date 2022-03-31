@@ -26,3 +26,7 @@ fn main() {
         println!();
     }
 }
+
+// TODO:
+// Fix project name _ vs -
+// Add more patterns
