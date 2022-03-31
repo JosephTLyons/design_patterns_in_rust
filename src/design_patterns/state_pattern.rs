@@ -3,24 +3,33 @@ use crate::design_pattern_example::DesignPatternExample;
 struct EngineOff;
 
 impl EngineOff {
+    fn new() -> Self {
+        println!("Turning Engine Off");
+        EngineOff {}
+    }
     fn engine_on(self) -> Idle {
-        Idle {}
+        Idle::new()
     }
 }
 
 struct Idle;
 
 impl Idle {
+    fn new() -> Self {
+        println!("Idling");
+        Idle {}
+    }
+
     fn forward(self) -> Forward {
-        Forward {}
+        Forward::new()
     }
 
     fn backward(self) -> Backward {
-        Backward {}
+        Backward::new()
     }
 
     fn engine_off(self) -> EngineOff {
-        EngineOff {}
+        EngineOff::new()
     }
 }
 
@@ -29,16 +38,35 @@ trait Drive {
     where
         Self: Sized,
     {
-        Idle {}
+        Idle::new()
     }
-    fn left(&self) {}
-    fn right(&self) {}
+    fn left(&self) {
+        println!("Turning Left");
+    }
+    fn right(&self) {
+        println!("Turning Right");
+    }
 }
 
 struct Forward;
+
+impl Forward {
+    fn new() -> Self {
+        println!("Moving Forward");
+        Forward {}
+    }
+}
 impl Drive for Forward {}
 
 struct Backward;
+
+impl Backward {
+    fn new() -> Self {
+        println!("Moving Backward");
+        Backward {}
+    }
+}
+
 impl Drive for Backward {}
 
 pub struct StatePatternExample;
