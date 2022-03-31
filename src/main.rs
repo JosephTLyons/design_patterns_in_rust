@@ -13,7 +13,12 @@ fn main() {
     ];
 
     for example in examples {
-        println!("Running: {}", example.name());
+        let example_name = example.name();
+        println!("{example_name}");
+
+        let divider = "=".repeat(example_name.len());
+        println!("{divider}");
+
         example.run();
         println!();
     }
