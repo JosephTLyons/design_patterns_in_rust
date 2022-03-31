@@ -1,4 +1,5 @@
 mod design_pattern_example;
+mod design_pattern_type;
 mod design_patterns;
 
 use design_pattern_example::DesignPatternExample;
@@ -13,11 +14,7 @@ fn main() {
     ];
 
     for example in examples {
-        let header = format!(
-            "{} Pattern ({} Example)",
-            example.pattern_name(),
-            example.example_name()
-        );
+        let header = example.design_pattern_type().to_string();
         println!("{header}");
 
         let divider = "=".repeat(header.len());

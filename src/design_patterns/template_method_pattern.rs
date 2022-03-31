@@ -1,4 +1,4 @@
-use crate::design_pattern_example::DesignPatternExample;
+use crate::{design_pattern_example::DesignPatternExample, design_pattern_type::DesignPatternType};
 
 trait AddContent {
     fn add_content(&self) {
@@ -28,12 +28,8 @@ impl AddContent for Magazine {
 pub struct TemplateMethodPatternExample;
 
 impl DesignPatternExample for TemplateMethodPatternExample {
-    fn pattern_name<'a>(&self) -> &'a str {
-        "Template Method"
-    }
-
-    fn example_name<'a>(&self) -> &'a str {
-        "Article"
+    fn design_pattern_type<'a>(&self) -> crate::design_pattern_type::DesignPatternType {
+        DesignPatternType::TemplateMethod("Article")
     }
 
     fn run(&self) {

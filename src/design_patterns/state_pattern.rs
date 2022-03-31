@@ -1,4 +1,4 @@
-use crate::design_pattern_example::DesignPatternExample;
+use crate::{design_pattern_example::DesignPatternExample, design_pattern_type::DesignPatternType};
 
 struct EngineOff;
 
@@ -72,12 +72,8 @@ impl Drive for Backward {}
 pub struct StatePatternExample;
 
 impl DesignPatternExample for StatePatternExample {
-    fn pattern_name<'a>(&self) -> &'a str {
-        "State"
-    }
-
-    fn example_name<'a>(&self) -> &'a str {
-        "Car"
+    fn design_pattern_type<'a>(&self) -> DesignPatternType {
+        DesignPatternType::State("Car")
     }
 
     fn run(&self) {
