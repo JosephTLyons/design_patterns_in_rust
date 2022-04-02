@@ -5,7 +5,7 @@ struct EngineOff;
 impl EngineOff {
     fn new() -> Self {
         println!("Turning Engine Off");
-        EngineOff {}
+        Self {}
     }
 
     fn engine_on(self) -> Idle {
@@ -18,7 +18,7 @@ struct Idle;
 impl Idle {
     fn new() -> Self {
         println!("Idling");
-        Idle {}
+        Self {}
     }
 
     fn forward(self) -> Forward {
@@ -56,7 +56,7 @@ struct Forward;
 impl Forward {
     fn new() -> Self {
         println!("Moving Forward");
-        Forward {}
+        Self {}
     }
 }
 impl Drive for Forward {}
@@ -66,7 +66,7 @@ struct Backward;
 impl Backward {
     fn new() -> Self {
         println!("Moving Backward");
-        Backward {}
+        Self {}
     }
 }
 
