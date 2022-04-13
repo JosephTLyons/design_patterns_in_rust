@@ -31,7 +31,7 @@ impl AddContent for Magazine {
 pub struct TemplateMethodPatternExample;
 
 impl DesignPatternExample for TemplateMethodPatternExample {
-    fn design_pattern_type<'a>(&self) -> crate::design_pattern_type::DesignPatternType {
+    fn design_pattern_type<'a>(&self) -> DesignPatternType {
         DesignPatternType::TemplateMethod("Article")
     }
 
